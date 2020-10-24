@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+    form(action='/bikes/store' method='post')
+        .form-group
+            label(for='color') Color
+            input#color.form-control(type='text' name='color' aria-describedby='emailHelp' placeholder='Enter bicycle color')
+            small#emailHelp.form-text.text-muted If you&apos;re a guy, do what you can.
+        .form-group
+            label(for='make') Make
+            input#make.form-control(type='text' name='make' placeholder='Type in the manufacturer')
+        .form-group
+            label(for='longitude') Longitude
+            input#longitude.form-control(type='text' name='longitude' placeholder='Type in the LNG coordinates')
+        .form-group
+            label(for='latitude') Latitude
+            input#latitude.form-control(type='text' name='latitude' placeholder='Type in the LAT coordinates')
+        button.btn.btn-primary(type='submit') Save

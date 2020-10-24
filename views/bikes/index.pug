@@ -1,0 +1,27 @@
+extends ../layout
+
+block content
+    a(href="/bikes/create") Create new Bicycle
+    br
+    table.table
+        thead
+            tr
+                th(scope='col') #
+                th(scope='col') Color
+                th(scope='col') Make
+                th(scope='col') Location
+                th(scope='col')
+                th(scope='col')
+        tbody
+            each Bike in bikes
+                tr
+                    th(scope='row')= Bike.id
+                    td= Bike.color
+                    td= Bike.make
+                    td= Bike.location
+                    td
+                        a.btn.btn-secondary(href=`bikes/${Bike.id}/edit`) Actualizar
+                    td
+                        form.inline(method='post' action=`bikes/${Bike.id}/delete`)
+                            button.btn.btn-danger(type='submit' name='btnSubmit' value='submit')
+                                = 'Eliminar'
