@@ -1,4 +1,4 @@
-var Bike = require('../models/bike')
+let Bike = require('../models/bike')
 
 exports.index = function (req, res) {
 	res.render('../views/bikes/index', {bikes: Bike.allBikes});
@@ -10,7 +10,7 @@ exports.create = function (req, res) {
 exports.store = function (req, res) {
 	const id = Bike.allBikes.length + 1;
 	const location = [req.body.longitude, req.body.latitude];
-	var newBike = new Bike(id, req.body.color, req.body.make, location);
+	let newBike = new Bike(id, req.body.color, req.body.make, location);
 	Bike.add(newBike);
 
 	res.redirect('/bikes')
@@ -33,5 +33,5 @@ exports.delete = function (req, res) {
 	const id = req.params.id;
 	Bike.delete(id);
 
-	res.redirect('/bikes')
+	res.redirect('/bikes');
 }

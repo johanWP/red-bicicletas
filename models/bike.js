@@ -35,8 +35,8 @@ Bike.delete = function (bikeId) {
 	}
 }
 
-let a = new Bike(1, 'green', 'Shimano', [-34.562422, -58.458166]);
-let b = new Bike(2, 'white', 'Shimano', [-34.562422, -58.459277]);
+let a = new Bike(1, 'Green', 'Shimano', [-34.562422, -58.455966]);
+let b = new Bike(2, 'White', 'Armstrong', [-34.562422, -58.459410]);
 
 Bike.add(a);
 Bike.add(b);
